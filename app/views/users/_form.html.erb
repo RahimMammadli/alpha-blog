@@ -22,7 +22,8 @@
                     </div>
                 </div>
                 <div class="form-group row justify-content-center">
-                    <%= form.submit("Sign up", data: {turbo: false }, class:"btn btn-outline-light btn-lg") %>
+                    <%= form.submit(@user.new_record? ? "Sign up" : "Update account", 
+                    data: {turbo: false }, class:"btn btn-outline-light btn-lg") %>
                 </div>
             <% end %>
         </div>
