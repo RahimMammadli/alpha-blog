@@ -1,7 +1,13 @@
 <div class="container">
     <% flash.each do |name, msg| %>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <%= msg %>  
-        </div>
+        <% if name == "notice" %>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <%= msg %>  
+            </div>
+        <% elsif name == "alert" %>
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <%= msg %>  
+            </div>
+        <% end %>
     <% end %>
 </div>
